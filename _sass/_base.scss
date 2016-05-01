@@ -1,350 +1,54 @@
-// ===============================
-//   SCSS Variables
-// ===============================
-
-// Main Color Variables
-$neutral-color: #ddd;
-
-$primary-color: #D9F5E8;
-$primary-color-name: 'Mint';
-
-$secondary-color: #37cbc2;
-$secondary-color-name: 'Teal';
-
-$tertiary-color: #fb3;
-$tertiary-color-name: 'Gold';
-
-$accent-color: #FF6347;
-$accent-color-name: 'Tomato';
-
-$base-color: #0ba;
-$base-color-name: 'Pirate';
-
-// Variation Amounts
-// Change these to affect the color variations
-
-$lighten-amount: 8;
-$light-saturate-amount: 10;
-
-$darken-amount: 10;
-$dark-saturate-amount: 20;
-
-// How strong should the added color be in the Mixed Colors?
-// Closer to 0% = closer to original base color
-
-$mix-weight: 65%;
-
-// Color Variable Maps
-
-$colors: (
-    primary: $primary-color,
-    secondary: $secondary-color,
-    tertiary: $tertiary-color,
-    accent: $accent-color,
-    base: $base-color
-);
-
-$color-names: (
-    primary: $primary-color-name,
-    secondary: $secondary-color-name,
-    tertiary: $tertiary-color-name,
-    accent: $accent-color-name,
-    base: $base-color-name
-);
-
-
-// Use the variables from above and add them to the page
-
-// In this function, $color-type and $color-value are just pretty names that refer to
-// where those values are in the "map" above. $color-type refers to the stuff before
-// the colon and $color-value refers to the stuff after (which point back to other Sass
-// variables). $colors is the name of the map, though: we define a map elsewhere and then
-// call it here by using the same name.
-
-@each $color-type, $color-value in $colors {
-    // Get the RGB values
-    .color-#{$color-type} .label-rgb:before {
-        content: '#{red($color-value)} / #{green($color-value)} / #{blue($color-value)}';
-    }
-
-    // Get the HSL values and round them
-    .color-#{$color-type} .label-hsl:before {
-        content: '#{round(hue($color-value))} / #{round(saturation($color-value))} / #{round(lightness($color-value))}';
-    }
-
-    // Set the swatch color
-    .color-#{$color-type} .swatch {
-        background: $color-value;
-    }
-
-    // Set the swatch color for the Light palette
-    .color-#{$color-type} .swatch-light {
-        background: lighten(saturate($color-value, $light-saturate-amount), $lighten-amount);
-    }
-
-    // Set the swatch color for the Dark palette
-    .color-#{$color-type} .swatch-dark {
-        background: darken(saturate($color-value, $dark-saturate-amount), $darken-amount);
-    }
-
-    .color-primary .mixed-with-#{$color-type} .swatch {
-        background: mix($color-value, $primary-color, $mix-weight);
-    }
-
-    .color-secondary .mixed-with-#{$color-type} .swatch {
-        background: mix($color-value, $secondary-color, $mix-weight);
-    }
-
-    .color-tertiary .mixed-with-#{$color-type} .swatch {
-        background: mix($color-value, $tertiary-color, $mix-weight);
-    }
-
-    .color-accent .mixed-with-#{$color-type} .swatch {
-        background: mix($color-value, $accent-color, $mix-weight);
-    }
+/* Reset
+------------------------------------------- */
+html, body {
+  font-size: 18px;
+  line-height: 26px;
 }
-
-@each $color-type, $color-name-value in $color-names {
-    // Get the color's name
-    .color-#{$color-type} .label-name:before,
-    .color-#{$color-type} h3.subheader:before {
-        content: '#{$color-name-value}';
-    }
+body > h1 {
+  font-weight: 400;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
 }
-
-// Main Typography Variables
-// Because we are displaying this value on page, there are no quotes around font names
-
-$primary-font: Open Sans;
-$accent-font: Bree Serif;
-
-// Get the font names
-// The quotes around the font names are there in case the font name has multiple words
-
-strong.primary-font:before,
-.type-specimen.primary-font h2:before {
-    content: '#{$primary-font}';
+body > p {
+  margin-top: 0;
+  margin-bottom: 20px;
 }
-
-strong.accent-font:before,
-.type-specimen.accent-font h2:before{
-    content: '#{$accent-font}';
+/* Reset
++++++++++++++++++++++++++++++++++++++++++++ */
+/* layout
+------------------------------------------- */
+.container > .row {
+  margin-bottom: 60px;
 }
-
-// Font Stacks
-// You may need to change your stack based on the fonts you choose
-
-$primary-font-stack: '#{$primary-font}', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$accent-font-stack: '#{$accent-font}', serif;
-
-// ===============================
-//   Page Style
-// ===============================
-
-body {
-    padding-bottom: 30px;
-    font-family: $primary-font-stack;
+.no-gutters {
+  padding-left: 15px;
+  padding-right: 15px;
 }
-
-h1.section-header {
-    font-size: 4rem;
-    margin-top: 4rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid $neutral-color;
+.no-gutters > * {
+  padding: 0;
 }
-
-h2.section-subheader {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-top: 5rem;
-
-    h1 + & {
-        margin-top: 2rem;
-    }
-}
-
-.navbar-toggle .icon-bar {
-    font-family: Arial, sans-serif;
-    margin-bottom: 5px;
-}
-
-// ===============================
-//   Style Guide Elements
-// ===============================
-
-// Flexbox CSS to equalize column height
-
-.row-eq-height {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display:         flex;
-
-    & > div {
-        position: relative;
-        min-height: 30px;
-    }
-}
-
-.row.no-gutters {
-    margin-right: 0;
-    margin-left: 0;
-
-    & > [class^="col-"],
-    & > [class*=" col-"] {
-          padding-right: 0;
-          padding-left: 0;
-    }
-}
-
-// Side labels; a lot of Bootstrap overrides
-
-.label {
-    color: #ddd;
-    white-space: normal;
-    text-align: left;
-    font-size: 1.5rem;
-    border-radius: 0;
-    display: block;
-    padding: 0;
-
-    &:empty {
-        display: block;
-    }
-
-    .row-eq-height & {
-        vertical-align: middle;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .color & {
-        color: #000;
-
-        &.label-color {
-            text-align: right;
-            font-weight: normal;
-        }
-    }
-}
-
-// ===============================
-//   Color Section
-// ===============================
-
+/* layout
++++++++++++++++++++++++++++++++++++++++++++ */
+/* Color
+------------------------------------------- */
 .swatch {
-    width: 100%;
-    height: 150px;
-    margin-bottom: 2rem;
-
-    &.swatch-small {
-        height: 50px;
-    }
+  width: 100%;
+  height: 140px;
+  margin-bottom: 20px;
 }
-
-.mixed-with-primary h4:before {
-    content: 'Mixed with #{$mix-weight} #{$primary-color-name}';
+.color .label-hex {
+  text-transform: uppercase;
 }
-
-.mixed-with-secondary h4:before {
-    content: 'Mixed with #{$mix-weight} #{$secondary-color-name}';
+.color .label {
+  font-weight: 700;
+  font-size: .8rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
-
-.mixed-with-tertiary h4:before {
-    content: 'Mixed with #{$mix-weight} #{$tertiary-color-name}';
+.color .label-color {
+  text-align: right;
+  font-weight: 400;
 }
-
-.mixed-with-accent h4:before {
-    content: 'Mixed with #{$mix-weight} #{$accent-color-name}';
-}
-
-// ===============================
-//   Typography Section
-// ===============================
-
-.type-specimen {
-    h2 {
-        font-size: 7rem;
-    }
-
-    h3 {
-        font-size: 5rem;
-    }
-
-    span:nth-of-type(1),
-    span:nth-of-type(3){
-        font-weight: bold;
-    }
-
-    span:nth-of-type(3),
-    span:nth-of-type(4){
-        font-style: italic;
-    }
-
-    span:nth-of-type(1) {
-        color: $primary-color;
-    }
-
-    span:nth-of-type(2) {
-        color: $secondary-color;
-    }
-
-    span:nth-of-type(3) {
-        color: $tertiary-color;
-    }
-
-    span:nth-of-type(4) {
-        color: $accent-color;
-    }
-
-    span:nth-of-type(5) {
-        color: $neutral-color;
-    }
-
-    & ~ & {
-        margin-top: 5rem;
-    }
-
-    &.primary-font {
-        font-family: $primary-font-stack;
-    }
-
-    &.accent-font {
-        font-family: $accent-font-stack;
-    }
-}
-
-// Customize based on your own personal style
-
-.heading-samples {
-    h1 {
-        font-family: $accent-font-stack;
-        font-size: 4.5rem;
-        color: darken(saturate($secondary-color, $dark-saturate-amount), $darken-amount);
-    }
-
-    h2, h3, h6 {
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-    }
-
-    h3 {
-        color: darken($neutral-color, $darken-amount);
-        font-family: $accent-font-stack;
-        font-size: 2.75rem;
-    }
-
-    h4 {
-        font-weight: bold;
-        color: mix($secondary-color, $tertiary-color, $mix-weight);
-    }
-
-    h5 {
-        font-weight: bold;
-    }
-
-    p {
-        line-height: 160%;
-    }
-}
+/* Color
++++++++++++++++++++++++++++++++++++++++++++ */

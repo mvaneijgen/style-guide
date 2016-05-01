@@ -1,4 +1,5 @@
 ---
-name: Mint
-color: D9F5E8
+name: 'Green'
+color: 'ad6'
+kind: 'primary'
 ---

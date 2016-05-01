@@ -7,146 +7,21 @@ layout: default
 	<h1 class="section-header">Colors</h1>
 	<h2 class="section-subheader">Primary Colors</h2>
 	<div class="row">
-		<div class="col-xs-6 col-md-3 color color-primary">
-			<div class="swatch"></div>
-
-			<div class="row">
-				<div class="col-xs-2 col-sm-3">
-					<p class="label">Name:</p>
-					<p class="label">RGB:</p>
-					<p class="label">HSL:</p>
-				</div>
-				<div class="col-xs-10 col-sm-9">
-					<p class="label label-color label-name"></p>
-					<p class="label label-color label-rgb"></p>
-					<p class="label label-color label-hsl"></p>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-6 col-md-3 color color-secondary">
-			<div class="swatch"></div>
-
-			<div class="row">
-				<div class="col-xs-2 col-sm-3">
-					<p class="label">Name:</p>
-					<p class="label">RGB:</p>
-					<p class="label">HSL:</p>
-				</div>
-				<div class="col-xs-10 col-sm-9">
-					<p class="label label-color label-name"></p>
-					<p class="label label-color label-rgb"></p>
-					<p class="label label-color label-hsl"></p>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-6 col-md-3 color color-tertiary">
-			<div class="swatch"></div>
-
-			<div class="row">
-				<div class="col-xs-2 col-sm-3">
-					<p class="label">Name:</p>
-					<p class="label">RGB:</p>
-					<p class="label">HSL:</p>
-				</div>
-				<div class="col-xs-10 col-sm-9">
-					<p class="label label-color label-name"></p>
-					<p class="label label-color label-rgb"></p>
-					<p class="label label-color label-hsl"></p>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-6 col-md-3 color color-accent">
-			<div class="swatch"></div>
-
-			<div class="row">
-				<div class="col-xs-2 col-sm-3">
-					<p class="label">Name:</p>
-					<p class="label">RGB:</p>
-					<p class="label">HSL:</p>
-				</div>
-				<div class="col-xs-10 col-sm-9">
-					<p class="label label-color label-name"></p>
-					<p class="label label-color label-rgb"></p>
-					<p class="label label-color label-hsl"></p>
-				</div>
-			</div>
-		</div>
-    <div class="col-xs-6 col-md-3 color color-base">
-			<div class="swatch"></div>
-
-			<div class="row">
-				<div class="col-xs-2 col-sm-3">
-					<p class="label">Name:</p>
-					<p class="label">RGB:</p>
-					<p class="label">HSL:</p>
-				</div>
-				<div class="col-xs-10 col-sm-9">
-					<p class="label label-color label-name"></p>
-					<p class="label label-color label-rgb"></p>
-					<p class="label label-color label-hsl"></p>
-				</div>
-			</div>
-		</div>
+		{% assign color = site.colors | where: "kind", "primary" %}
+		{% include loop-color.html %}
 	</div>
-
+	<h2 class="section-subheader">Basic Colors</h2>
+	<div class="row">
+		{% assign color = site.colors | where: "kind", "basic" %}
+		{% include loop-color.html %}
+	</div>
 	<h2 class="section-subheader">Tints & Tones</h2>
 	<p class="lead">
 		These colors are lighter and darker variations of our main brand colors. These are especially helpful for hover states, illustrations, and other small variations.
 	</p>
-
 	<div class="row">
-		<div class="col-sm-6 col-md-3 color-variations color-primary">
-			<div class="row no-gutters">
-				<div class="col-xs-4">
-					<div class="swatch swatch-light"></div>
-				</div>
-				<div class="col-xs-4">
-					<div class="swatch swatch-base"></div>
-				</div>
-				<div class="col-xs-4">
-					<div class="swatch swatch-dark"></div>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-6 col-md-3 color-variations color-secondary">
-			<div class="row no-gutters">
-				<div class="col-xs-4">
-					<div class="swatch swatch-light"></div>
-				</div>
-				<div class="col-xs-4">
-					<div class="swatch swatch-base"></div>
-				</div>
-				<div class="col-xs-4">
-					<div class="swatch swatch-dark"></div>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-6 col-md-3 color-variations color-tertiary">
-			<div class="row no-gutters">
-				<div class="col-xs-4">
-					<div class="swatch swatch-light"></div>
-				</div>
-				<div class="col-xs-4">
-					<div class="swatch swatch-base"></div>
-				</div>
-				<div class="col-xs-4">
-					<div class="swatch swatch-dark"></div>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-6 col-md-3 color-variations color-accent">
-			<div class="row no-gutters">
-				<div class="col-xs-4">
-					<div class="swatch swatch-light"></div>
-				</div>
-				<div class="col-xs-4">
-					<div class="swatch swatch-base"></div>
-				</div>
-				<div class="col-xs-4">
-					<div class="swatch swatch-dark"></div>
-				</div>
-			</div>
-		</div>
+		{% assign color = site.colors | where: "kind", "primary" %}
+		{% include loop-tint.html %}
 	</div>
 
 	<h2 class="section-subheader">Generated Colors</h2>
