@@ -7,12 +7,12 @@ layout: default
 	<h1 class="section-header">Colors</h1>
 	<h2 class="section-subheader">Primary Colors</h2>
 	<div class="row">
-		{% assign color = site.colors | where: "kind", "primary" %}
+		{% assign color = site.data.colors | where: "kind", "primary" %}
 		{% include loop-color.html %}
 	</div>
 	<h2 class="section-subheader">Basic Colors</h2>
 	<div class="row">
-		{% assign color = site.colors | where: "kind", "basic" %}
+		{% assign color = site.data.colors | where: "kind", "basic" %}
 		{% include loop-color.html %}
 	</div>
 	<h2 class="section-subheader">Tints & Tones</h2>
@@ -20,7 +20,7 @@ layout: default
 		These colors are lighter and darker variations of our main brand colors. These are especially helpful for hover states, illustrations, and other small variations.
 	</p>
 	<div class="row">
-		{% assign color = site.colors | where: "kind", "primary" %}
+		{% assign color = site.data.colors | where: "kind", "primary" %}
 		{% include loop-tint.html %}
 	</div>
 

@@ -1,0 +1,31 @@
+- name: primary
+  color: ad6
+  kind: primary
+
+- name: secondary
+  color: 444
+  kind: primary
+
+- name: tertiary
+  color: 0BA
+  kind: primary
+
+- name: quaternary
+  color: FE3
+  kind: primary
+
+- name: quinary
+  color: 3b3f48
+  kind: primary
+
+- name: dark
+  color: "000"
+  kind: basic
+
+- name: light
+  color: eee
+  kind: basic
+
+- name: alt
+  color: fff
+  kind: basic

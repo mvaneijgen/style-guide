@@ -1,5 +1,5 @@
-{% for item in site.type %}
-{% assign hexcolor = site.colors | where: "name", "dark" %}
+{% for item in site.data.type %}
+{% assign hexcolor = site.data.colors | where: "name", item.color %}
 <div class="row row-eq-height">
   <div class="col-xs-2 col-md-1">
     <p class="label">{{ item.name }}</p>
@@ -8,7 +8,7 @@
 
     {{ item.color }} = {{ hexcolor }}
     <{{ item.name }} style="
-        color: #;
+        color: #{{ hexcolor.color }};
         font-size: {{ item.font-size }};
         line-height: {{ item.line-height }};
         margin-top: {{ item.margin-top }};

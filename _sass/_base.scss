@@ -14,6 +14,12 @@ body > p {
   margin-top: 0;
   margin-bottom: 20px;
 }
+h1.section-header {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  font-weight: 400;
+}
 /* Reset
 +++++++++++++++++++++++++++++++++++++++++++ */
 /* layout
@@ -49,6 +55,9 @@ body > p {
 .color .label-color {
   text-align: right;
   font-weight: 400;
+}
+.color {
+  margin-bottom: 30px;
 }
 /* Color
 +++++++++++++++++++++++++++++++++++++++++++ */

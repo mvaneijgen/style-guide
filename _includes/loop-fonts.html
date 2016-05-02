@@ -1,8 +1,8 @@
-{% for item in site.fonts %}
+{% for item in site.data.fonts %}
 <div class="type-specimen primary-font" style="font-family: '{{ item.name }}';">
   <h2>{{ item.name }}</h2>
   <h3>
-  {% assign colors = site.colors | where: "kind", "primary" %}
+  {% assign colors = site.data.colors | where: "kind", "primary" %}
   {% for colors in color %}
     <span style="color: #{{ colors.color }};">Aa</span>
   {% endfor %}

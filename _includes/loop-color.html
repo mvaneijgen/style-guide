@@ -10,7 +10,7 @@
     </div>
     <div class="col-xs-10 col-sm-9">
       <p class="label label-color label-name">{{ item.name }}</p>
-      <p class="label label-color label-hex">#{{ item.color }}</p>
+      <p class="label label-color label-hex">#{{ item.color | escape }}</p>
       <p class="label label-color label-rgb">rgba(0,0,0,1)</p>
     </div>
   </div>
