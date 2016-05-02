@@ -1,0 +1,25 @@
+{% for item in site.type %}
+{% assign hexcolor = site.colors | where: "name", "dark" %}
+<div class="row row-eq-height">
+  <div class="col-xs-2 col-md-1">
+    <p class="label">{{ item.name }}</p>
+  </div>
+  <div class="col-xs-10 col-md-11">
+
+    {{ item.color }} = {{ hexcolor }}
+    <{{ item.name }} style="
+        color: #;
+        font-size: {{ item.font-size }};
+        line-height: {{ item.line-height }};
+        margin-top: {{ item.margin-top }};
+        margin-bottom: {{ item.margin-bottom }};
+      ">
+      {% if item.kind == 'header' %}
+        The quick brown fox jumps over a lazy dog
+      {% else %}
+        By Jove, my quick study of lexicography won a prize! Painful zombies quickly watch a jinxed graveyard. Grumpy wizards make a toxic brew for the jovial queen. A quick movement of the enemy will jeopardize six gunboats. Jackie will budget for the most expensive zoology equipment. Jim quickly realized that the beautiful gowns are expensive, then a cop quizzed Mick Jagger’s ex-wives briefly.
+      {% endif %}
+    </{{ item.name }}>
+  </div>
+</div>
+{% endfor %}

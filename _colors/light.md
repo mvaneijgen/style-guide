@@ -1,5 +1,5 @@
 ---
-name: Light
-color: eee
-kind: basic
+name: 'light'
+color: 'eee'
+kind: 'basic'
 ---

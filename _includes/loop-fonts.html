@@ -1,0 +1,11 @@
+{% for item in site.fonts %}
+<div class="type-specimen primary-font" style="font-family: '{{ item.name }}';">
+  <h2>{{ item.name }}</h2>
+  <h3>
+  {% assign colors = site.colors | where: "kind", "primary" %}
+  {% for colors in color %}
+    <span style="color: #{{ colors.color }};">Aa</span>
+  {% endfor %}
+  </h3>
+</div>
+{% endfor %}

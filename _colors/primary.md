@@ -1,5 +1,5 @@
 ---
-name: 'Green'
+name: 'primary'
 color: 'ad6'
 kind: 'primary'
 ---

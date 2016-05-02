@@ -1,6 +1,7 @@
 ---
-name: Green
-color: D9F5E8
-weights: 400 
-kind: primary
+name: 'Roboto Slab'
+weights:
+- '400'
+- '700'
+source: 'Google'
 ---

@@ -1,5 +1,5 @@
 ---
-name: Text color
+name: 'secondary'
 color: '444'
-kind: primary
+kind: 'primary'
 ---

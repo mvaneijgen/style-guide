@@ -1,5 +1,5 @@
 ---
-name: 'Brown'
-color: '433'
+name: 'tertiary'
+color: '0BA'
 kind: 'primary'
 ---

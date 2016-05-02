@@ -21,11 +21,12 @@ ColorLuminance("6699CC", 0.2);	// "#7ab8f5" - 20% lighter
 ColorLuminance("69C", -0.5);	// "#334d66" - 50% darker
 
 $( document ).ready(function() {
-    var container = $(".color-variations");
-    var baseColor = container.attr('id');
-    var lightColor = ColorLuminance(baseColor, 0.2);
-    var darkColor = ColorLuminance(baseColor, -0.2);
-    console.log(lightColor);
-    $(".color-variations .swatch-light").css( "background-color", lightColor );
-    $(".color-variations .swatch-dark").css( "background-color", darkColor );
+  $(".color-variations").each(function() {
+      var baseColor = $(this).attr('id');
+      var lightColor = ColorLuminance(baseColor, 0.2);
+      var darkColor = ColorLuminance(baseColor, -0.2);
+
+      $(".swatch-light", this).css( "background-color", lightColor );
+      $(".swatch-dark", this).css( "background-color", darkColor );
+  });
 });

@@ -26,3 +26,5 @@ collections:
     output: true
   fonts:
     output: true
+  type:
+    output: true

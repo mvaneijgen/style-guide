@@ -1,5 +1,5 @@
 ---
-name: Drak grey
-color: 3b3f48
-kind: basic
+name: 'grey'
+color: '3b3f48'
+kind: 'basic'
 ---

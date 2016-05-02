@@ -1,5 +1,5 @@
 ---
-name: 'White'
+name: 'alt'
 color: 'fff'
 kind: 'basic'
 ---
