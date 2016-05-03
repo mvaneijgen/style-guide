@@ -1,84 +1,15 @@
+{% for item in color %}
 <div class="col-sm-6 col-md-3 mixed-colors color-primary">
-  <h3 class="subheader"></h3>
-  <div class="swatch"></div>
-
-  <div class="mixed-with-primary">
-    <h4 class="subheader"></h4>
-    <div class="swatch swatch-small"></div>
-  </div>
-  <div class="mixed-with-secondary">
-    <h4 class="subheader"></h4>
-    <div class="swatch swatch-small"></div>
-  </div>
-  <div class="mixed-with-tertiary">
-    <h4 class="subheader"></h4>
-    <div class="swatch swatch-small"></div>
-  </div>
-  <div class="mixed-with-accent">
-    <h4 class="subheader"></h4>
-    <div class="swatch swatch-small"></div>
-  </div>
+  <h3 class="subheader">{{ item.name }}</h3>
+  <div class="swatch" style="background-color: #{{ item.color }}"></div>
+  {% assign mixes = site.data.colors | where: "kind", "primary" %}
+  {% for sub-item in mixes %}
+    {% if item.color != sub-item.color %}
+    <div class="mixed-with-primary">
+      <h4 class="subheader">mixed with 60% {{ sub-item.name }}</h4>
+      <div class="swatch swatch-small" data-firstColor="{{ item.color }}" data-secondColor="{{ sub-item.color }}"></div>
+    </div>
+    {% endif %}
+  {% endfor %}
 </div>
-<div class="col-sm-6 col-md-3 mixed-colors color-secondary">
-  <h3 class="subheader"></h3>
-  <div class="swatch"></div>
-
-  <div class="mixed-with-primary">
-    <h4 class="subheader"></h4>
-    <div class="swatch swatch-small"></div>
-  </div>
-  <div class="mixed-with-secondary">
-    <h4 class="subheader"></h4>
-    <div class="swatch swatch-small"></div>
-  </div>
-  <div class="mixed-with-tertiary">
-    <h4 class="subheader"></h4>
-    <div class="swatch swatch-small"></div>
-  </div>
-  <div class="mixed-with-accent">
-    <h4 class="subheader"></h4>
-    <div class="swatch swatch-small"></div>
-  </div>
-</div>
-<div class="col-sm-6 col-md-3 mixed-colors color-tertiary">
-  <h3 class="subheader"></h3>
-  <div class="swatch"></div>
-
-  <div class="mixed-with-primary">
-    <h4 class="subheader"></h4>
-    <div class="swatch swatch-small"></div>
-  </div>
-  <div class="mixed-with-secondary">
-    <h4 class="subheader"></h4>
-    <div class="swatch swatch-small"></div>
-  </div>
-  <div class="mixed-with-tertiary">
-    <h4 class="subheader"></h4>
-    <div class="swatch swatch-small"></div>
-  </div>
-  <div class="mixed-with-accent">
-    <h4 class="subheader"></h4>
-    <div class="swatch swatch-small"></div>
-  </div>
-</div>
-<div class="col-sm-6 col-md-3 mixed-colors color-accent">
-  <h3 class="subheader"></h3>
-  <div class="swatch"></div>
-
-  <div class="mixed-with-primary">
-    <h4 class="subheader"></h4>
-    <div class="swatch swatch-small"></div>
-  </div>
-  <div class="mixed-with-secondary">
-    <h4 class="subheader"></h4>
-    <div class="swatch swatch-small"></div>
-  </div>
-  <div class="mixed-with-tertiary">
-    <h4 class="subheader"></h4>
-    <div class="swatch swatch-small"></div>
-  </div>
-  <div class="mixed-with-accent">
-    <h4 class="subheader"></h4>
-    <div class="swatch swatch-small"></div>
-  </div>
-</div>
+{% endfor %}

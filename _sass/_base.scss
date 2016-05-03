@@ -4,13 +4,10 @@ html, body {
   font-size: 18px;
   line-height: 26px;
 }
-body > h1 {
-  font-weight: 400;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 15px;
-  margin-bottom: 20px;
-}
-body > p {
+p.lead {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  color: #444;
   margin-top: 0;
   margin-bottom: 20px;
 }
@@ -25,6 +22,14 @@ h1.section-header {
   justify-content: center;
   align-items: center;
   height: 300px;
+}
+h3.subheader {
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+h4.subheader {
+  font-weight: 400;
+  margin-bottom: 5px;
 }
 /* Reset
 +++++++++++++++++++++++++++++++++++++++++++ */
@@ -48,6 +53,11 @@ h1.section-header {
   width: 100%;
   height: 140px;
   margin-bottom: 20px;
+  background: #ccc;
+}
+.swatch-small {
+  height: 70px;
+  background: #ccc;
 }
 .color .label-hex {
   text-transform: uppercase;

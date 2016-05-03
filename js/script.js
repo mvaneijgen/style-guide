@@ -21,6 +21,7 @@ ColorLuminance("6699CC", 0.2);	// "#7ab8f5" - 20% lighter
 ColorLuminance("69C", -0.5);	// "#334d66" - 50% darker
 
 $( document ).ready(function() {
+
   $(".color-variations").each(function() {
       var baseColor = $(this).attr('id');
       var lightColor = ColorLuminance(baseColor, 0.2);
@@ -29,4 +30,11 @@ $( document ).ready(function() {
       $(".swatch-light", this).css( "background-color", lightColor );
       $(".swatch-dark", this).css( "background-color", darkColor );
   });
+	$(".swatch-small").each(function() {
+		var firstColor = $(this).attr('data-firstColor');
+		var secondColor = $(this).attr('data-secondColor');
+
+		var mixed = $.xcolor.opacity(firstColor, secondColor, 0.6);
+		$(this).css( "background-color", mixed );
+	});
 });

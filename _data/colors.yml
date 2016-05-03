@@ -14,10 +14,6 @@
   color: FE3
   kind: primary
 
-- name: quinary
-  color: 3b3f48
-  kind: primary
-
 - name: dark
   color: "000"
   kind: basic
