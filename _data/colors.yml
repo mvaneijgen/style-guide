@@ -1,21 +1,17 @@
 - name: primary
-  color: ad6
+  color: 34B
   kind: primary
 
 - name: secondary
-  color: 444
-  kind: primary
-
-- name: tertiary
-  color: 0BA
-  kind: primary
-
-- name: quaternary
-  color: FE3
+  color: FA0
   kind: primary
 
 - name: dark
   color: "000"
+  kind: basic
+
+- name: sub
+  color: 444
   kind: basic
 
 - name: light

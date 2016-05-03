@@ -1,10 +1,23 @@
 ---
 layout: default
+sketches: 3
 ---
-
+<style media="screen">
+	html {
+	{% assign base = site.data.type | where: "kind", "base" %}
+	{{ base[0].style }}
+	}
+</style>
 <div class="container">
+<div class="row">
 
-	<h1 class="section-header">Colors</h1>
+	<h1 class="introduction" id="sketches">UI sketches {{ site.title }}</h1>
+	<h2 class="introduction-sub">by <a href="//studioalloy.nl">Studio Alloy</a></h2>
+{% for i in (1..page.sketches) %}
+	<img src="img/{{ i }}.jpg" class="ui-sketch"/>
+{% endfor %}
+
+	<h1 class="section-header" id="colors">Colors</h1>
 	<h2 class="section-subheader">Primary Colors</h2>
 	<div class="row">
 		{% assign color = site.data.colors | where: "kind", "primary" %}
@@ -27,7 +40,7 @@ layout: default
 	<p class="lead">
 		These colors are derived from combinations with other brand colors. These may be used as accents in illustrations and other design work, though they should not overpower our main brand colors. The official brand colors are displayed first for easy reference.
 	</p>
-
+</div>
 
 	<div class="row">
 		{% assign color = site.data.colors | where: "kind", "primary" %}
@@ -56,6 +69,12 @@ layout: default
 			</div>
 		</div>
 	</div>
-	<h1 class="section-header" id="buttons">Buttons</h1>
+	<h1 class="section-header" id="buttons">Buttons &amp; input fields</h1>
+	<p class="lead">
+		These colors are lighter and darker variations of our main brand colors. These are especially helpful for hover states, illustrations, and other small variations.
+	</p>
+	<h2 class="section-subheader">Buttons</h2>
 	{% include loop-buttons.html %}
+	<h2 class="section-subheader">Input fields</h2>
+	{% include loop-inputs.html %}
 </div>

@@ -1,19 +1,20 @@
 {% for item in site.data.type %}
 {% assign hexcolor = site.data.colors | where: "name", item.color %}
+{% assign family = site.data.fonts | where: "type", item.font-family %}
+{% if item.kind != 'base' %}
 <div class="row row-eq-height">
   <div class="col-xs-2 col-md-1">
     <p class="label">{{ item.name }}</p>
   </div>
   <div class="col-xs-10 col-md-11">
-
-    <{{ item.name }} style="
+    <style media="screen">
+      {{ item.name }} {
+        font-family: "{{ family[0].name }}";
         color: #{{ hexcolor[0].color }};
-        font-size: {{ item.font-size }};
-        line-height: {{ item.line-height }};
-        margin-top: {{ item.margin-top }};
-        margin-bottom: {{ item.margin-bottom }};
-      ">
-
+        {{ item.style }}
+      }
+    </style>
+    <{{ item.name }}>
       {% if item.kind == 'header' %}
         The quick brown fox jumps over a lazy dog
       {% else %}
@@ -22,4 +23,5 @@
     </{{ item.name }}>
   </div>
 </div>
+{% endif %}
 {% endfor %}

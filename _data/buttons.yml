@@ -1,14 +1,14 @@
 - name: primary
   content: Button text
   class: alloy-btn
+  background: primary
+  color: dark
+  font-family: primary
   style: > #
-    background: red;
     padding: 10px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 400;
   hover-style: > #
     background: #0ba;
-- name: secondary
-  content: Button text
-  class: alloy-btn
-  style: > #
-    background: red;
-    padding: 10px 40px;
+    text-decoration: none;

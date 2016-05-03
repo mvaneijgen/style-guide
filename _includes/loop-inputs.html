@@ -1,20 +1,18 @@
-{% for item in site.data.buttons %}
-{% assign background = site.data.colors | where: "name", item.background %}
-{% assign color = site.data.colors | where: "name", item.color %}
+{% for item in site.data.inputs %}
 {% assign family = site.data.fonts | where: "type", item.font-family %}
+{% assign color = site.data.colors | where: "name", "primary" %}
 <div class="col-md-12 flex-center">
 <style media="screen">
-.{{ item.class }} {
+input {
   font-family: "{{ family[0].name }}";
-  background-color: #{{ background[0].color }};
-  color: #{{ color[0].color }};
   {{ item.style }}
 }
-.{{ item.class }}:hover {
-  {{ item.hover-style }}
+input:focus {
+  border-color: #{{ color[0].color }};
+  {{ item.focus }}
 }
 </style>
-  <a href="#" class="{{ item.class }}">{{ item.content }}</a>
+  <input type=["text"] placeholder="{{ item.placehoder }}" >
 </div>
 <!-- <div class="col-md-4">
   {% highlight css %}

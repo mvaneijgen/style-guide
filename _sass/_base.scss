@@ -1,17 +1,23 @@
 /* Reset
 ------------------------------------------- */
-html, body {
+body,
+p.label {
   font-size: 18px;
   line-height: 26px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 p.lead {
-  font-size: 1.2rem;
-  line-height: 1.8rem;
+  font-size: 18px;
+  line-height: 26px;
   color: #444;
   margin-top: 0;
   margin-bottom: 20px;
 }
 h1.section-header {
+  font-size: 34px;
+  line-height: 38px;
   border-bottom: 1px solid #ccc;
   margin-bottom: 30px;
   padding-bottom: 15px;
@@ -23,13 +29,52 @@ h1.section-header {
   align-items: center;
   height: 300px;
 }
+h2.section-subheader {
+  font-size: 30px;
+  line-height: 34px;
+  margin-top: 0;
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
 h3.subheader {
-  font-weight: 400;
-  font-size: 1.4rem;
+  font-size: 24px;
 }
 h4.subheader {
-  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
   margin-bottom: 5px;
+}
+h1.section-header,
+h3.subheader,
+h4.subheader {
+  color: #000;
+  font-weight: 400;
+}
+.type-specimen h2 {
+  color: #000;
+}
+.introduction,
+.introduction-sub {
+  color: #000;
+  text-align: center;
+}
+.introduction {
+  font-size: 40px;
+  line-height: 50px;
+  margin-top: 90px;
+}
+.introduction-sub {
+  font-size: 30px;
+  line-height: 40px;
+}
+.ui-sketch {
+  max-width: 100%;
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+}
+.ui-sketch:first-of-type {
+  border: 0;
 }
 /* Reset
 +++++++++++++++++++++++++++++++++++++++++++ */
@@ -54,6 +99,7 @@ h4.subheader {
   height: 140px;
   margin-bottom: 20px;
   background: #ccc;
+  box-shadow: 1px 1px 5px rgba(0,0,0,.1);
 }
 .swatch-small {
   height: 70px;
@@ -61,12 +107,6 @@ h4.subheader {
 }
 .color .label-hex {
   text-transform: uppercase;
-}
-.color .label {
-  font-weight: 700;
-  font-size: .8rem;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 .color .label-color {
   text-align: right;

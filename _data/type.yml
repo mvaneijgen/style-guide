@@ -1,59 +1,69 @@
+- name: html
+  font-family: secondary
+  color: primary
+  kind: base
+  style: > #
+    font-size: 18px;
 - name: h1
   font-family: secondary
   color: primary
-  weight: 700
   kind: header
-  font-size: 3rem
-  line-height: 3.4rem
-  margin-top: 0
-  margin-bottom: 30
-
+  style: > #
+    font-size: 3rem;
+    line-height: 3.4rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 30px;
 - name: h2
   font-family: secondary
   color: secondary
-  weight: 700
   kind: header
-  font-size: 2rem
-  line-height: 2.4rem
-  margin-top: 0
-  margin-bottom: 30
-
+  style: > #
+    font-size: 2.6rem;
+    line-height: 3rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 30px;
 - name: h3
   font-family: secondary
   color: tertiary
-  weight: 700
   kind: header
-  font-size: 1.6rem
-  line-height: 1.4rem
-  margin-top: 0
-  margin-bottom: 30
+  style: > #
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 30px;
 
 - name: h4
   font-family: primary
   color: dark
-  weight: 700
   kind: header
-  font-size: 1.4em
-  line-height: 1.4rem
-  margin-top: 0
-  margin-bottom: 30
+  style: > #
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 30px;
 
 - name: h5
   font-family: primary
   color: dark
-  weight: 700
   kind: header
-  font-size: 1rem
-  line-height: 1.4rem
-  margin-top: 0
-  margin-bottom: 30
+  style: > #
+    font-size: 1rem;
+    line-height: 1.6rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 30px;
 
 - name: p
   font-family: primary
   color: dark
-  weight: 400
   kind: basic
-  font-size: 1rem
-  line-height: 1.4rem
-  margin-top: 0
-  margin-bottom: 30
+  style: > #
+    font-size: 1rem;
+    line-height: 1.6rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 30px;
