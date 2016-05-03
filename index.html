@@ -23,11 +23,12 @@ layout: default
 		{% assign color = site.data.colors | where: "kind", "primary" %}
 		{% include loop-tint.html %}
 	</div>
-
 	<h2 class="section-subheader">Generated Colors</h2>
 	<p class="lead">
 		These colors are derived from combinations with other brand colors. These may be used as accents in illustrations and other design work, though they should not overpower our main brand colors. The official brand colors are displayed first for easy reference.
 	</p>
+
+
 	<div class="row">
 		{% assign color = site.data.colors | where: "kind", "primary" %}
 		{% include loop-mixed.html %}
@@ -41,15 +42,20 @@ layout: default
 		<strong class="primary-font"></strong> is used as our primary typeface and
 		<strong class="accent-font"></strong> is used as an accent for headings and other special purposes.
 	</p>
-
-	{% include loop-fonts.html %}
-
+	<div class="row">
+		<div class="col-md-12">
+			{% include loop-fonts.html %}
+		</div>
+	</div>
 	<h2 class="section-subheader">Headings</h2>
 
-	<div class="heading-samples">
-		{% include loop-type.html %}
+	<div class="row">
+		<div class="col-md-12">
+			<div class="heading-samples">
+				{% include loop-type.html %}
+			</div>
+		</div>
 	</div>
-
 	<h1 class="section-header" id="buttons">Buttons</h1>
 	{% include loop-buttons.html %}
 </div>
