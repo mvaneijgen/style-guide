@@ -1,0 +1,24 @@
+{% for item in site.data.buttons %}
+<div class="col-md-8 flex-center">
+<style media="screen">
+.{{ item.class }} {
+  {{ item.style }}
+}
+.{{ item.class }}:hover {
+  {{ item.hover-style }}
+}
+</style>
+  <a href="#" class="{{ item.class }}">{{ item.content }}</a>
+</div>
+<div class="col-md-4">
+  {% highlight css %}
+  .{{ item.class }} {
+    {{ item.style }}
+  }
+  .{{ item.class }}:hover {
+    {{ item.hover-style }}
+  }
+  {% endhighlight %}
+</div>
+
+{% endfor %}

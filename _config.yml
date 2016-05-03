@@ -20,6 +20,12 @@ github_username:  jekyll
 # Build settings
 markdown: kramdown
 
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
 # Collections
 collections:
   colors:

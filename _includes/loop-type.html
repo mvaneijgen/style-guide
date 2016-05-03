@@ -6,14 +6,14 @@
   </div>
   <div class="col-xs-10 col-md-11">
 
-    {{ item.color }} = {{ hexcolor }}
     <{{ item.name }} style="
-        color: #;
+        color: #{{ hexcolor[0].color }};
         font-size: {{ item.font-size }};
         line-height: {{ item.line-height }};
         margin-top: {{ item.margin-top }};
         margin-bottom: {{ item.margin-bottom }};
       ">
+
       {% if item.kind == 'header' %}
         The quick brown fox jumps over a lazy dog
       {% else %}

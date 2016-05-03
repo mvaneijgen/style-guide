@@ -1,11 +1,11 @@
-- name: 'Roboto Slab'
+- name: Roboto Slab
   weights:
-  - '400'
-  - '700'
-  source: 'Google'
+  - 400
+  - 700
+  source: Google
 
-- name: 'Open Sans'
+- name: Open Sans
   weights:
-  - '400'
-  - '700'
-  source: 'Google'
+  - 400
+  - 700
+  source: Google

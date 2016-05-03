@@ -1,0 +1,14 @@
+- name: primary
+  content: Button text
+  class: alloy-btn
+  style: > #
+    background: red;
+    padding: 10px 40px;
+  hover-style: > #
+    background: #0ba;
+- name: secondary
+  content: Button text
+  class: alloy-btn
+  style: > #
+    background: red;
+    padding: 10px 40px;

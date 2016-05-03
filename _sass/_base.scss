@@ -20,6 +20,12 @@ h1.section-header {
   padding-bottom: 15px;
   font-weight: 400;
 }
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
 /* Reset
 +++++++++++++++++++++++++++++++++++++++++++ */
 /* layout
