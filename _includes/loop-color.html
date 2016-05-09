@@ -1,17 +1,10 @@
 {% for item in color %}
 <div class="col-xs-6 col-md-3 color color-{{ item.name }}">
-  <div class="swatch" style="background-color: #{{ item.color }}"></div>
-
-  <div class="row">
-    <div class="col-xs-2 col-sm-3">
-      <p class="label">Name:</p>
-      <p class="label">HEX:</p>
-      <p class="label">RGB:</p>
-    </div>
-    <div class="col-xs-10 col-sm-9">
+  <div class="color__inner">
+    <div class="swatch" style="background-color: #{{ item.color }}"></div>
+    <div class="color__meta">  
       <p class="label label-color label-name">{{ item.name }}</p>
       <p class="label label-color label-hex">#{{ item.color | escape }}</p>
-      <p class="label label-color label-rgb">rgba(0,0,0,1)</p>
     </div>
   </div>
 </div>

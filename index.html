@@ -1,80 +1,87 @@
 ---
 layout: default
-sketches: 0
+designs: 5
 ---
 <style media="screen">
-	html {
+html {
 	{% assign base = site.data.type | where: "kind", "base" %}
 	{{ base[0].style }}
-	}
+}
 </style>
-<div class="container">
-<div class="row">
-
-	<h1 class="introduction" id="sketches">UI sketches {{ site.title }}</h1>
-	<h2 class="introduction-sub">by <a href="//studioalloy.nl">Studio Alloy</a></h2>
-{% for i in (1..page.sketches) %}
-	<img src="img/{{ i }}.jpg" class="ui-sketch"/>
-{% endfor %}
-
-	<h1 class="section-header" id="colors">Colors</h1>
-	<h2 class="section-subheader">Primary Colors</h2>
+{% assign primary = site.data.colors | where: "name", "primary" %}
+{% assign alt = site.data.colors | where: "name", "alt" %}
+<div class="container-fluid intro" style="background: #{{ primary[0].color }};">
 	<div class="row">
-		{% assign color = site.data.colors | where: "kind", "primary" %}
-		{% include loop-color.html %}
+		<div class="col-md-12">
+			<h1 class="introduction" id="sketches" style="color: #{{ alt[0].color }};">Style guide: {{ site.title }}</h1>
+			<h2 class="introduction-sub" style="color: #{{ alt[0].color }};">by <a href="//studioalloy.nl" style="color: #{{ alt[0].color }};">Studio Alloy</a></h2>
+		</div>
 	</div>
-	<h2 class="section-subheader">Basic Colors</h2>
-	<div class="row">
-		{% assign color = site.data.colors | where: "kind", "basic" %}
-		{% include loop-color.html %}
-	</div>
-	<h2 class="section-subheader">Tints & Tones</h2>
-	<p class="lead">
-		These colors are lighter and darker variations of our main brand colors. These are especially helpful for hover states, illustrations, and other small variations.
-	</p>
-	<div class="row">
-		{% assign color = site.data.colors | where: "kind", "primary" %}
-		{% include loop-tint.html %}
-	</div>
-	<h2 class="section-subheader">Generated Colors</h2>
-	<p class="lead">
-		These colors are derived from combinations with other brand colors. These may be used as accents in illustrations and other design work, though they should not overpower our main brand colors. The official brand colors are displayed first for easy reference.
-	</p>
 </div>
-
+<div class="container">
 	<div class="row">
-		{% assign color = site.data.colors | where: "kind", "primary" %}
-		{% include loop-mixed.html %}
-	</div>
+		<div class="col-md-8 col-md-offset-2">
+			{% for i in (1..page.designs) %}
+			<img src="img/{{ i }}.jpg" class="ui-sketch"/>
+			{% endfor %}
 
-	<!-- Typography -->
-
-	<h1 class="section-header" id="typography">Typography</h1>
-
-	<p class="lead">
-		<strong class="primary-font"></strong> is used as our primary typeface and
-		<strong class="accent-font"></strong> is used as an accent for headings and other special purposes.
-	</p>
-	<div class="row">
-		<div class="col-md-12">
-			{% include loop-fonts.html %}
-		</div>
-	</div>
-	<h2 class="section-subheader">Headings</h2>
-
-	<div class="row">
-		<div class="col-md-12">
-			<div class="heading-samples">
-				{% include loop-type.html %}
+			<h1 class="section-header" id="colors">Colors</h1>
+			<h2 class="section-subheader">Primary Colors</h2>
+			<div class="row">
+				{% assign color = site.data.colors | where: "kind", "primary" %}
+				{% include loop-color.html %}
 			</div>
+			<h2 class="section-subheader">Basic Colors</h2>
+			<div class="row">
+				{% assign color = site.data.colors | where: "kind", "basic" %}
+				{% include loop-color.html %}
+			</div>
+			<h2 class="section-subheader">Tints & Tones</h2>
+			<p class="lead">
+				These colors are lighter and darker variations of our main brand colors. These are especially helpful for hover states, illustrations, and other small variations.
+			</p>
+			<div class="row">
+				{% assign color = site.data.colors | where: "kind", "primary" %}
+				{% include loop-tint.html %}
+			</div>
+			<h2 class="section-subheader">Generated Colors</h2>
+			<p class="lead">
+				These colors are derived from combinations with other brand colors. These may be used as accents in illustrations and other design work, though they should not overpower our main brand colors. The official brand colors are displayed first for easy reference.
+			</p>
+
+			<div class="row">
+				{% assign color = site.data.colors | where: "kind", "primary" %}
+				{% include loop-mixed.html %}
+			</div>
+			<!-- Typography -->
+			<h1 class="section-header" id="typography">Typography</h1>
+
+			<p class="lead">
+				<strong class="primary-font"></strong> is used as our primary typeface and
+				<strong class="accent-font"></strong> is used as an accent for headings and other special purposes.
+			</p>
+			<div class="row">
+				<div class="col-md-12">
+					{% include loop-fonts.html %}
+				</div>
+			</div>
+			<h2 class="section-subheader">Headings</h2>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="heading-samples">
+						{% include loop-type.html %}
+					</div>
+				</div>
+			</div>
+			<h1 class="section-header" id="buttons">Buttons &amp; input fields</h1>
+			<p class="lead">
+				These colors are lighter and darker variations of our main brand colors. These are especially helpful for hover states, illustrations, and other small variations.
+			</p>
+			<h2 class="section-subheader">Buttons</h2>
+			{% include loop-buttons.html %}
+			<h2 class="section-subheader">Input fields</h2>
+			{% include loop-inputs.html %}
 		</div>
 	</div>
-	<h1 class="section-header" id="buttons">Buttons &amp; input fields</h1>
-	<p class="lead">
-		These colors are lighter and darker variations of our main brand colors. These are especially helpful for hover states, illustrations, and other small variations.
-	</p>
-	<h2 class="section-subheader">Buttons</h2>
-	{% include loop-buttons.html %}
-	<h2 class="section-subheader">Input fields</h2>
-	{% include loop-inputs.html %}
 </div>

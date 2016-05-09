@@ -1,5 +1,8 @@
 /* Reset
 ------------------------------------------- */
+body {
+  background: #eee;
+}
 body,
 p.label {
   font-size: 18px;
@@ -20,6 +23,7 @@ h1.section-header {
   line-height: 38px;
   border-bottom: 1px solid #ccc;
   margin-bottom: 30px;
+  margin-top: 60px;
   padding-bottom: 15px;
   font-weight: 400;
 }
@@ -41,7 +45,7 @@ h3.subheader {
   font-size: 24px;
 }
 h4.subheader {
-  font-size: 16px;
+  font-size: 10px;
   line-height: 20px;
   margin-bottom: 5px;
 }
@@ -78,6 +82,64 @@ h4.subheader {
 }
 /* Reset
 +++++++++++++++++++++++++++++++++++++++++++ */
+/* Header
+------------------------------------------- */
+header {
+  background: #fff;
+  display: flex;
+  height: 80px;
+  align-items: center;
+}
+header > * {
+  display: inline-block;
+}
+header a {
+  margin-left: 30px;
+  font-weight: 400;
+  color: #000;
+}
+header img {
+  width: 80px;
+}
+header nav {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.intro .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  min-height: 600px;
+}
+.intro h1 {
+  margin-top: 0;
+}
+.intro a {
+  text-decoration: underline;
+}
+@media only screen and (min-width : 1023px) {
+	/* Styles */
+  header {
+    display: block;
+    position: fixed;
+    height: 100vh;
+    width: 100px;
+  }
+  header img {
+    width: 100px;
+  }
+  header a {
+    margin-left: 15px;
+    margin-bottom: 12px;
+    display: block;
+  }
+  header nav {
+    margin-top: 15px;
+  }
+}
+/* Header
++++++++++++++++++++++++++++++++++++++++++++ */
 /* layout
 ------------------------------------------- */
 .container > .row {
@@ -97,9 +159,14 @@ h4.subheader {
 .swatch {
   width: 100%;
   height: 140px;
-  margin-bottom: 20px;
   background: #ccc;
+}
+.color__inner {
   box-shadow: 1px 1px 5px rgba(0,0,0,.1);
+  background: #fff;
+}
+.color__meta {
+  padding: 15px;
 }
 .swatch-small {
   height: 70px;
@@ -114,6 +181,9 @@ h4.subheader {
 }
 .color {
   margin-bottom: 30px;
+}
+.mixed-colors .swatch {
+  margin-bottom: 15px;
 }
 /* Color
 +++++++++++++++++++++++++++++++++++++++++++ */
