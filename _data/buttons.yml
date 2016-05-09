@@ -9,6 +9,8 @@
     border-radius: 30px;
     text-decoration: none;
     font-weight: 400;
+    color: #fff;
   hover-style: > #
     background: #0ba;
     text-decoration: none;
+    color: #fff;

@@ -82,6 +82,17 @@ h4.subheader {
 }
 /* Reset
 +++++++++++++++++++++++++++++++++++++++++++ */
+/* Layout
+------------------------------------------- */
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 200px;
+  margin-bottom: 60px;
+}
+/* Layout
++++++++++++++++++++++++++++++++++++++++++++ */
 /* Header
 ------------------------------------------- */
 header {
@@ -89,6 +100,7 @@ header {
   display: flex;
   height: 80px;
   align-items: center;
+  z-index: 9;
 }
 header > * {
   display: inline-block;
@@ -96,6 +108,9 @@ header > * {
 header a {
   margin-left: 30px;
   font-weight: 400;
+  color: #000;
+}
+header a:hover {
   color: #000;
 }
 header img {
@@ -118,7 +133,7 @@ header nav {
 .intro a {
   text-decoration: underline;
 }
-@media only screen and (min-width : 1023px) {
+@media only screen and (min-width : 1200px) {
 	/* Styles */
   header {
     display: block;
