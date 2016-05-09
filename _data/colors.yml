@@ -6,6 +6,14 @@
   color: FA0
   kind: primary
 
+- name: tertiary
+  color: 0ba
+  kind: primary
+
+- name: quaternary
+  color: E64
+  kind: primary
+
 - name: dark
   color: "000"
   kind: basic
